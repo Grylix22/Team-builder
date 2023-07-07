@@ -1,0 +1,358 @@
+//  ---------------------------------
+// variables
+//  ---------------------------------
+
+// fonts
+$btn-font: "Signika Negative", sans-serif;
+$headers-font: "Exo 2", sans-serif;
+$table-font: "Josefin Sans", sans-serif;
+
+// colors
+$blue-btn: #ffffff;
+$blue-BGbtn: #0f56c0;
+
+// table
+$bottom-space: 100px;
+$table-min-height: 100px;
+$table-width: calc(100vw - 20px);
+$table-font-size: 16px;
+$table-text-align: center;
+$table-color: #000000;
+$table-background-color: rgb(221, 221, 109);
+$table-border-color: #000000;
+$table-border-radius: 12px;
+$table-box-shadow: 8px 8px 24px 0px rgba(35, 36, 47, 1);
+
+$table-input-border-color: #1967dd;
+$table-input-background-color: #790d0d;
+
+$form-bg-color: #ffcb74;
+
+// ---------------------------------
+// code
+// ---------------------------------
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  font-size: 1rem;
+  color: #e2e2e2;
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  font-size: 20px;
+  background-color: #ffcb74;
+  background-image: linear-gradient(
+    180deg,
+    #ffcb74 0%,
+    #b89c21 30%,
+    #963a3a 100%
+  );
+}
+
+// ---------------------------------
+// form
+// ---------------------------------
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1 0;
+  margin: 2%;
+  padding: 1rem 2rem;
+  height: max(fit-content, 20%);
+  width: 32rem;
+  background-color: rgb(221, 221, 109);
+  border: 2px solid rgb(186, 189, 43);
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(35, 36, 47, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(35, 36, 47, 1);
+  box-shadow: 8px 8px 24px 0px rgba(35, 36, 47, 1);
+
+  span {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.47rem;
+    font-family: "Signika Negative", sans-serif;
+    font-size: 1.97rem;
+    font-weight: 800;
+    color: rgb(78, 28, 28);
+  }
+}
+
+.inputBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: $btn-font;
+}
+
+.inputRow {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: rgba(35, 36, 47, 1);
+  font-size: 1.47rem;
+  letter-spacing: 2px;
+  transform: translateY(40%);
+}
+
+input {
+  width: 50%;
+  margin: 10px 0;
+  height: 1.74rem;
+  width: 15rem;
+  font-size: 1.47rem;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+input:focus {
+  border: 2px solid #1967dd;
+  outline: none;
+}
+
+input[type="submit"] {
+  align-self: flex-end;
+  height: 3rem;
+  width: 15.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: $blue-btn;
+  background-color: $blue-BGbtn;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #0c4497;
+  cursor: pointer;
+}
+
+input::placeholder {
+  font-weight: 400;
+  color: #242424cc;
+}
+
+.formError {
+  color: #000000;
+  font-size: 0.9em;
+  background-color: #ff01016c;
+  border-radius: 20px;
+}
+
+.formError p {
+  margin: 0.6rem 1rem;
+}
+
+.formError p::before {
+  content: "!";
+  margin: 5px;
+  background-color: #ffff00;
+}
+
+// ---------------------------------
+// tables
+// ---------------------------------
+
+h3 {
+  font-family: $headers-font;
+  font-size: 4rem;
+}
+
+table {
+  display: block;
+  margin: 0 2%;
+  margin-bottom: $bottom-space;
+  min-height: $table-min-height;
+  min-width: 90vw;
+  max-width: calc(100vw - 2%);
+  font-family: "Signika Negative", sans-serif;
+  font-size: $table-font-size;
+  text-align: $table-text-align;
+  color: $table-color;
+  background-color: $table-background-color;
+  border: 2px solid $table-border-color;
+  border-radius: $table-border-radius;
+  border-collapse: collapse;
+  overflow: auto;
+  box-shadow: $table-box-shadow;
+}
+
+th {
+  border: 1px solid $table-border-color;
+  padding: 1rem 0.47em;
+  font-size: 1.47rem;
+}
+
+tr:first-of-type {
+  font-size: 1em;
+  height: 2em;
+  background-color: rgb(189, 84, 35);
+}
+
+tr {
+  height: min(fit-content, 50px);
+}
+
+td {
+  padding: 0.7em 1em;
+  max-width: max-content;
+  overflow-wrap: break-word;
+  border-left: 1px solid $table-border-color;
+  border-right: 1px solid $table-border-color;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(196, 196, 59);
+}
+
+table input:hover {
+  border: 2px solid $table-input-border-color;
+  background-color: $table-input-background-color;
+  outline: none;
+}
+
+table button {
+  height: 2.67rem;
+  min-width: 4.2em;
+  font-family: $table-font;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgb(158, 18, 18);
+  border: none;
+  border-radius: 11px;
+  transition: translateY(50%);
+
+  &::before {
+    content: "\2715";
+    position: relative;
+    font-size: 20px;
+    padding-right: 3px;
+  }
+
+  &:hover {
+    background-color: rgb(158, 18, 18);
+    transform: translateY(2px);
+    cursor: pointer;
+  }
+}
+
+//  ---------------------------------
+// mobile
+// ---------------------------------
+
+@media only screen and (max-width: 632px) {
+  // form
+  form {
+    margin: 1rem 1%;
+    width: 70vw;
+  }
+
+  form span {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.47rem;
+    font-family: "Signika Negative", sans-serif;
+    font-size: 2.97rem;
+    font-weight: 800;
+    color: rgb(78, 28, 28);
+  }
+
+  label {
+    transform: translateY(-20%);
+  }
+
+  .formError {
+    font-size: 2rem;
+  }
+
+  // table
+  table {
+    width: 100vw;
+    overflow-x: scroll;
+  }
+
+  .inputBox {
+    justify-content: space-around;
+  }
+
+  .inputRow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    color: rgba(35, 36, 47, 1);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    transform: translateY(40%);
+  }
+
+  input {
+    width: 50%;
+    margin: 10px 0;
+    height: 1.74rem;
+    width: 15rem;
+    font-size: 1.47rem;
+    letter-spacing: 1px;
+    outline: none;
+  }
+
+  input:focus {
+    border: 2px solid #1967dd;
+    outline: none;
+  }
+
+  input[type="submit"] {
+    align-self: flex-end;
+    height: 3rem;
+    width: 15.6rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: $blue-btn;
+    background-color: $blue-BGbtn;
+    border: none;
+    border-radius: 3px;
+  }
+
+  td {
+    width: max-content;
+    overflow-wrap: normal;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+
+  // form
+  form {
+    display: flex;
+    align-items: center;
+
+    margin: 1%;
+    padding: 0;
+    width: 90vw;
+    flex-shrink: 0;
+  }
+
+  .inputBox {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
